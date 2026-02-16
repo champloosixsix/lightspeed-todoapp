@@ -175,7 +175,7 @@ export class App implements OnInit {
   }
 
   // Build specific developer table
-    private buildDeveloperProjectRows(userId: number): DeveloperProjectRow[] {
+  private buildDeveloperProjectRows(userId: number): DeveloperProjectRow[] {
     const rows: DeveloperProjectRow[] = [];
 
     for (const project of this.sourceProjects) {
