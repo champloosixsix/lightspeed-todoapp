@@ -1,0 +1,142 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<main class="page">
+    <header class="top-nav">
+    <div class="brand text-gradient">Lightspeed Developer Portal</div>
+    <img
+      class="logo"
+      src="/logo.png"
+      alt="Company logo"
+    />
+  </header>
+
+  <!-- Dashboard view -->
+  <section *ngIf="currentView === 'dashboard'" class='dashboard-grid'>
+    <div class="card">
+    <h2>Active Projects</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Project</th>
+          <th class="numbdata">Members</th>
+          <th class="numbdata">Tasks</th>
+          <th class="numbdata">Estimated Hours</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of activeProjects; trackBy: trackProjectById">
+          <td>
+            <a href="" (click)="$event.preventDefault(); openProjectTasks(row.id)">
+              {{ row.name }}
+            </a>
+          </td>
+          <td class="numbdata">{{ row.memberCount }}</td>
+          <td class="numbdata">{{ row.taskCount }}</td>
+          <td class="numbdata">{{ row.estimatedHours }}</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    
+    <div class="card">
+    <h2>Tasks by Developers</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Developer</th>
+          <th class="numbdata">Tasks</th>
+          <th class="numbdata">Estimated Hours</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of tasksByDevelopers; trackBy: trackDeveloperById">
+          <td>
+            <a href="" (click)="$event.preventDefault(); openDeveloperProjects(row.userId, row.developer)">
+              {{ row.developer }}
+            </a>
+          </td>
+          <td class="numbdata">{{ row.taskCount }}</td>
+          <td class="numbdata">{{ row.estimatedHours }}</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <!-- Task view -->
+  <section *ngIf="currentView === 'projectTasks'">
+    <div class="card">
+    <h2>{{ selectedProjectName }}</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Task</th>
+          <th class="numbdata">Assigned To</th>
+          <th class="numbdata">Estimated Hours</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of projectTaskRows; trackBy: trackTaskById">
+          <td>{{ row.taskName }}</td>
+          <td class="numbdata">{{ row.assignedTo }}</td>
+          <td class="numbdata">{{ row.estimatedHours }}</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <button type="button" class="button-gradient" (click)="backToDashboard()">Back to Dashboard</button>
+  </section>
+
+  <!-- Dev view -->
+  <section *ngIf="currentView === 'developerProjects'">
+    <div class="card">
+    <h2>{{ selectedDeveloperName }}'s Project List</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Project</th>
+          <th class="numbdata">Members</th>
+          <th class="numbdata">Estimated Hours</th>
+          <th class="numbdata">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of developerProjectRows; trackBy: trackDeveloperProjectById">
+          <td>{{ row.projectName }}</td>
+          <td class="numbdata">{{ row.usersAssigned }}</td>
+          <td class="numbdata">{{ row.estimatedHours }}</td>
+          <td class="numbdata">
+            <button type="button" class="button-gradient" (click)="openProjectTasks(row.projectId)">
+              View Tasks
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <button type="button" class="button-gradient" (click)="backToDashboard()">Back to Dashboard</button>
+  </section>
+
+  <footer>
+    This demo is brought to you by&nbsp;<a href="https://www.seancancode.com" target="_blank" rel="noopener"> Sean Lovins</a>.
+  </footer>
+
+</main>
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+

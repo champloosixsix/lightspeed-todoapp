@@ -1,0 +1,92 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+  /** Base colors */
+--clr-dark-a0: #000000;
+--clr-light-a0: #ffffff;
+
+/** Theme primary colors */
+--clr-primary-a0: #3bb5de;
+--clr-primary-a10: #5cbde2;
+--clr-primary-a20: #76c5e5;
+--clr-primary-a30: #8ccee9;
+--clr-primary-a40: #a1d6ed;
+--clr-primary-a50: #b5def0;
+
+/** Theme surface colors */
+--clr-surface-a0: #121212;
+--clr-surface-a10: #282828;
+--clr-surface-a20: #3f3f3f;
+--clr-surface-a30: #575757;
+--clr-surface-a40: #717171;
+--clr-surface-a50: #8b8b8b;
+
+/** Theme tonal surface colors */
+--clr-surface-tonal-a0: #1a2023;
+--clr-surface-tonal-a10: #2f3538;
+--clr-surface-tonal-a20: #464b4d;
+--clr-surface-tonal-a30: #5d6264;
+--clr-surface-tonal-a40: #767a7c;
+--clr-surface-tonal-a50: #909395;
+
+/** Success colors */
+--clr-success-a0: #22946e;
+--clr-success-a10: #47d5a6;
+--clr-success-a20: #9ae8ce;
+
+/** Warning colors */
+--clr-warning-a0: #a87a2a;
+--clr-warning-a10: #d7ac61;
+--clr-warning-a20: #ecd7b2;
+
+/** Danger colors */
+--clr-danger-a0: #9c2121;
+--clr-danger-a10: #d94a4a;
+--clr-danger-a20: #eb9e9e;
+
+/** Info colors */
+--clr-info-a0: #21498a;
+--clr-info-a10: #4077d1;
+--clr-info-a20: #92b2e5;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--clr-surface-a0);
+  color: var(--clr-light-a0);
+  font-family: 'roboto', sans-serif;
+}
+a {
+    color: var(--clr-light-a0)
+}
+h2 {
+    text-align: center;
+}
+.text-gradient {
+    color: #3BA3E3;
+    background-image: linear-gradient(45deg, #4f51da 38%, #7a62be 51%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+.button-gradient {
+    display: inline-block;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 4px;
+    font-size: 14px;
+    height: 30px;
+    padding: 0px 15px;
+    text-shadow: rgb(0 0 0 / 25%) 0px 3px 8px;
+    background: linear-gradient(92.88deg, rgb(69, 94, 181) 9.16%, rgb(86, 67, 204) 43.89%, rgb(103, 63, 215) 64.72%);
+    transition: all 0.5s ease 0s;
+}
+.button-gradient:hover{
+        box-shadow: rgb(80 63 205 / 50%) 0px 1px 40px;
+        transition: all 0.1s ease 0s;
+}
